@@ -19,6 +19,20 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
 
-print(enron_data["METTS MARK"]["salary"])
+# print (enron_data)
+# print(enron_data["METTS MARK"]["salary"])
+# print(len(enron_data["METTS MARK"]))
+
+poi_count = 0
+for key in enron_data:
+    poi_status = enron_data[key]["poi"]
+    print (poi_status)
+    if(poi_status):
+        print ("POI!")
+        poi_count += 1
+    else:
+        print ("false")
+
+print (poi_count)
 
 
