@@ -60,9 +60,14 @@ enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"
 # print (enron_data["LAY KENNETH L"]["total_payments"])
 # print (enron_data["FASTOW ANDREW S"]["total_payments"])
 
+total = 0
 known = 0
 for key in enron_data:
-    if(enron_data[key]["email_address"]!="NaN"):
-        known +=1
+    if(enron_data[key]["poi"]==True):
+        total +=1
+        if(enron_data[key]["total_payments"]=="NaN"):
+            known +=1
 
-print (known) 
+print (known)
+print (total)
+print (known/total) 
